@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tasks</title>
+</head>
+<body>
+<h1>Task List</h1>
+<table id="taskTable" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Due Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+    fetch('http://localhost:8080/api/tasks')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('taskTable').getElementsByTagName('tbody')[0];
+            data.forEach(task => {
+                const row = tableBody.insertRow();
+                row.insertCell(0).innerText = task.id;
+                row.insertCell(1).innerText = task.title;
+                row.insertCell(2).innerText = task.description;
+                row.insertCell(3).innerText = task.status;
+                row.insertCell(4).innerText = task.dueDate;
+            });
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+</script>
+</body>
+</html>
