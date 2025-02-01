@@ -18,5 +18,3 @@ The Task Management API allows users to:
 - **Docker & Docker Compose**
 - **GitHub Actions** (CI/CD)
 
-## Repository Structure
-
