@@ -1,4 +1,4 @@
-# Task Management API
+# Task Management API (Work In Progress)
 
 This repository contains a RESTful API for managing tasks (to-do items) built with Spring Boot. It demonstrates core concepts such as CRUD operations, database integration, Docker containerization, and CI/CD pipelines.
 
